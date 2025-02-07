@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HomePage extends BasePage {
 
-    @FindBy(xpath = "(//li[@class='product-item'])[1]") 
+    @FindBy(css = "img[alt='Radiant Tee']") 
     private WebElement firstProduct;
 
     public HomePage(WebDriver driver) {
