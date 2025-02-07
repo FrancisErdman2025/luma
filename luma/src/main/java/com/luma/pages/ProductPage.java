@@ -34,13 +34,13 @@ public class ProductPage extends BasePage {
     }
 
     public void selectSizeAndColor() {
-        wait.until(ExpectedConditions.elementToBeClickable(sizeOption_large)).click();
-        wait.until(ExpectedConditions.elementToBeClickable(colorOption_blue)).click();
+        super.clickOnElement(sizeOption_large);
+        super.clickOnElement(colorOption_blue);
     }
 
     public void enterQuantity(String sQty) {
-        wait.until(ExpectedConditions.elementToBeClickable(quantityField)).clear();
-        wait.until(ExpectedConditions.elementToBeClickable(quantityField)).sendKeys(sQty);
+        super.clearElement(quantityField);
+        super.sendKeysToElement(quantityField, sQty);
     }
 
     public void clickAddToCart() {
@@ -48,16 +48,10 @@ public class ProductPage extends BasePage {
     }
 
     public boolean isProductAddedMessageDisplayed() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        try {
-            wait.until(ExpectedConditions.visibilityOf(youAddedProductToCartMessageText));
-            return youAddedProductToCartMessageText.isDisplayed();
-        } catch (Exception e) {
-            return false;
-        }
+        return super.isElementDisplayed(youAddedProductToCartMessageText);
     }
     
     public String getErrorMessage() {
-        return wait.until(ExpectedConditions.visibilityOf(errorMessage)).getText();
+        return super.getElementText(errorMessage);
     }
 }
