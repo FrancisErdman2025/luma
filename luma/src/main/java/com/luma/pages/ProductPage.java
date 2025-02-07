@@ -10,10 +10,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ProductPage extends BasePage {
 
-    @FindBy(xpath = "(//div[@id='option-label-size-143-item-169'])") 
+    @FindBy(id = "option-label-size-143-item-169")
     private WebElement sizeOption_large;
 
-    @FindBy(xpath = "(//div[@id='option-label-color-93-item-50'])") 
+    @FindBy(id = "option-label-color-93-item-50")
     private WebElement colorOption_blue;
 
     @FindBy(id = "qty") 
